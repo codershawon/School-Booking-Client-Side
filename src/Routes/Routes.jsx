@@ -7,6 +7,7 @@ import RouteError from "../pages/RouteError/RouteError";
 import CollegeDetails from "../pages/Home/CollegeDetails/CollegeDetails";
 import Colleges from "../pages/Colleges/Colleges";
 import AboutCollege from "../pages/AboutCollege/AboutCollege";
+import Admission from "../pages/Admission/Admission";
 
 export const router = createBrowserRouter([
   {
@@ -32,7 +33,17 @@ export const router = createBrowserRouter([
         path:"/colleges/:id",
         element:<AboutCollege/>,
         loader:({params})=>fetch(`https://school-booking-facilities-server.vercel.app/allBookings/${params.id}`)
-      }
+      },
+      {
+        path:"/admission/:id",
+        element:<AboutCollege/>,
+        loader:({params})=>fetch(`https://school-booking-facilities-server.vercel.app/allBookings/${params.id}`)
+      },
+      {
+        path:"/admission",
+        element:<Admission/>,
+        loader:({params})=>fetch(`https://school-booking-facilities-server.vercel.app/allBookings/${params.id}`)
+      },
     ],
   },
   {

@@ -69,7 +69,7 @@ const Gallery = () => {
   return (
     <Container>
     <div>
-      <h1 className="text-center text-5xl font-bold mt-7 mb-6 ">Gallery</h1>
+      <h1 className="text-center text-3xl font-bold mt-14 mb-6 uppercase">Gallery</h1>
       <div className="grid md:grid-cols-2 lg:grid-cols-3 mb-10 w-[640px] md:w-[768px] lg:w-[1024px] mx-20 md:mx-auto lg:mx-auto">
         {images.map((image, index) => (
           <div

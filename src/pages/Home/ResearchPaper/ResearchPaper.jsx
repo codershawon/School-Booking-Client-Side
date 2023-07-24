@@ -7,7 +7,7 @@ const ResearchPaper = () => {
   return (
     <Container>
       <div>
-        <h1 className="text-center text-5xl font-bold mt-7 mb-6 ">
+        <h1 className="text-center text-3xl font-bold mt-14 mb-6 uppercase">
           Education Discoveries
         </h1>
         <div className="grid sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-2 gap-6 xl:gap-10 w-[640px] md:w-[768px] lg:w-[1024px] mx-auto">

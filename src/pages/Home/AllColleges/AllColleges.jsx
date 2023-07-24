@@ -49,7 +49,7 @@ const AllColleges = () => {
   return (
     <div>
       <Container>
-        <h1 className="text-4xl font-bold text-center pt-36">All Colleges</h1>
+        <h1 className="text-3xl font-bold text-center pt-36 uppercase">All Colleges</h1>
         <div className="w-[350px] mx-auto mt-5">
           <input
             type="text"

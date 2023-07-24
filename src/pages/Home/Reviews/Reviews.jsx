@@ -7,7 +7,7 @@ import "@smastrom/react-rating/style.css";
 const Reviews = () => {
   return (
     <Container>
-      <div className="w-[640px] md:w-[768px] lg:w-[1024px] mx-auto mb-6 mt-10">
+      <div className="w-[640px] md:w-[768px] lg:w-[1024px] mx-auto mb-6 mt-14">
         <h1 className="text-3xl font-bold text-center mt-6 mb-8 uppercase">
           Parent and Student Reviews
         </h1>
