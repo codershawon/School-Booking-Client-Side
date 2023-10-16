@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import College from './College';
 import Container from '../../components/Container';
+import SectionTitle from '../../hooks/SectionTitle';
 
 const Colleges = () => {
     const [colleges,setColleges]=useState([])
@@ -14,9 +15,10 @@ const Colleges = () => {
       console.log(colleges)
     return (
       <Container>
-          <div className='mb-10'>
-            <h1 className='text-center text-3xl font-bold pt-36 mb-6 uppercase'>Explore Colleges</h1>
-             <div className="grid sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-2 gap-6 xl:gap-10 w-[640px] md:w-[768px] lg:w-[1024px] mx-auto">
+          <div className='pt-40'>
+          <SectionTitle heading={"Explore Colleges"}></SectionTitle>
+
+             <div className="grid sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-2 gap-6 xl:gap-10 w-full md:w-[768px] lg:w-[1024px] mx-auto">
           {colleges.map((item) => (
             <College item={item} key={item._id}  />
           ))}

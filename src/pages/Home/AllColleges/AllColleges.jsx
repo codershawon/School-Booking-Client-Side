@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { FaSearch } from "react-icons/fa";
-import { RiArrowDropDownLine } from "react-icons/ri";
-import Container from "../../../components/Container";
 import CollegesData from "./CollegesData";
+import Container from "../../../components/Container";
+import SectionTitle from "../../../hooks/SectionTitle";
 
 const AllColleges = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -15,17 +15,14 @@ const AllColleges = () => {
       .then((res) => res.json())
       .then((data) => {
         setAllColleges(data);
-        // Apply search filter initially based on the persisted search query
         handleSearch(data, searchQuery);
       });
   }, [searchQuery]);
 
   useEffect(() => {
     if (showAllColleges) {
-      // If showAllColleges is true, display all colleges
       setFilteredColleges(allColleges);
     } else {
-      // Otherwise, apply the search filter
       handleSearch(allColleges, searchQuery);
     }
   }, [showAllColleges]);
@@ -35,22 +32,21 @@ const AllColleges = () => {
       const filteredColleges = data.filter((college) =>
         college.collegeName.toLowerCase().includes(query.toLowerCase())
       );
-      setFilteredColleges(filteredColleges.slice(0, 3)); // Limiting to 3 items
+      setFilteredColleges(filteredColleges.slice(0, 3));
     } else {
-      // Show all colleges if the search query is empty
-      setFilteredColleges(data.slice(0, 3)); // Limiting to 3 items
+      setFilteredColleges(data.slice(0, 4));
     }
   };
 
-  const handleShowAllColleges = () => {
-    setShowAllColleges(true);
+  const handleToggleColleges = () => {
+    setShowAllColleges(!showAllColleges);
   };
 
   return (
-    <div>
-      <Container>
-        <h1 className="text-3xl font-bold text-center pt-36 uppercase">All Colleges</h1>
-        <div className="w-[350px] mx-auto mt-5">
+    <Container>
+      <div className="mx-auto pt-40">
+        <SectionTitle heading={"All Colleges"}></SectionTitle>
+        <div className="w-[350px] mx-auto mt-5 text-center">
           <input
             type="text"
             placeholder="Search by college name"
@@ -59,30 +55,28 @@ const AllColleges = () => {
             onChange={(e) => setSearchQuery(e.target.value)}
           />
           <span className="relative right-10">
-            <button
-              type="submit"
-              onClick={() => handleSearch(allColleges, searchQuery)}
-            >
+            <button type="submit" onClick={() => handleSearch(allColleges, searchQuery)}>
               <FaSearch className="text-[#36d7b7]" size={18} />
             </button>
           </span>
         </div>
-        {filteredColleges.map((college) => (
-          <CollegesData key={college._id} college={college}></CollegesData>
-        ))}
-
-        {!showAllColleges && (
-          <button
-            className="btn btn-ghost bg-[#36d7b7] mx-auto mt-4 block"
-            onClick={handleShowAllColleges}
-          >
-            {" "}
-            Show All Colleges
-          </button>
-        )}
-      </Container>
-    </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 w-full xl:w-[1200px] gap-10 mx-auto mt-6">
+          {filteredColleges.map((college) => (
+            <div key={college._id} className="p-0 m-0">
+              <CollegesData college={college}></CollegesData>
+            </div>
+          ))}
+        </div>
+        <button
+          className="btn btn-ghost bg-[#36d7b7] mx-auto mt-4 block"
+          onClick={handleToggleColleges}
+        >
+          {showAllColleges ? "Show Less Colleges" : "Show All Colleges"}
+        </button>
+      </div>
+    </Container>
   );
 };
 
 export default AllColleges;
+

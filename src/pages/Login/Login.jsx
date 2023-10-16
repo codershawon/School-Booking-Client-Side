@@ -6,6 +6,8 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 import Swal from "sweetalert2";
 import { Toaster, toast } from "react-hot-toast";
+import loginLottie from "./Login.json"
+import Lottie from "lottie-react";
 const Login = () => {
     const { signInUser,signInWithGoogle,resetPassword,setLoading } = useAuth();
     const [control, setControl] = useState(false);
@@ -94,20 +96,18 @@ const handleReset = () => {
       {/* <Helmet> */}
       <title>School Booking || SignIn</title>
       {/* </Helmet> */}
-      <div className="flex flex-col lg:flex-row items-center justify-center gap-6 mt-20">
-        <img
-          src="https://i.ibb.co/K7x0dXp/Sandy-Tech-11-Single-07-removebg-preview.png"
-          alt=""
-        />
-        <div
+      <div className="flex flex-col lg:flex-row items-center justify-center gap-5 pr:0 xl:pr-52 mt-20 ">
+      <Lottie className="w-full lg:h-[600px] mx-auto" animationData={loginLottie} />
+      <div
           style={{
             border: "2px solid gray",
             borderRadius: "10px",
             padding: "20px",
           }}
+          className="w-full md:w-[500px] mx-auto"
         >
           <form onSubmit={handleLogin}>
-            <div className="mb-8 text-center">
+            <div className="mb-8 text-center w-full md:w-[450px] ">
               <h1 className="my-3 text-4xl font-bold">Log In</h1>
               <p className="text-sm text-gray-400">
                 Sign in to access your account
@@ -119,7 +119,7 @@ const handleReset = () => {
               </h5>
               <input
                 ref={emailRef}
-                className="w-[450px] h-[50px] bg-[#F3F3F3] rounded-lg pl-3"
+                className="w-full md:w-[450px] h-[50px] bg-[#F3F3F3] rounded-lg pl-3"
                 type="email"
                 name="email"
                 id="email"
@@ -133,7 +133,7 @@ const handleReset = () => {
                 <>
                   <input
                     onChange={(e) => setPassword(e.target.value)}
-                    className="w-[450px] h-[50px] bg-[#F3F3F3] rounded-lg pl-3"
+                    className="w-full md:w-[450px]  h-[50px] bg-[#F3F3F3] rounded-lg pl-3"
                     type="text"
                     name="password"
                     id=""
@@ -150,7 +150,7 @@ const handleReset = () => {
                 <>
                   <input
                     onChange={(e) => setPassword(e.target.value)}
-                    className="w-[450px] h-[50px] bg-[#F3F3F3] rounded-lg pl-3"
+                    className="w-full md:w-[450px] h-[50px] bg-[#F3F3F3] rounded-lg pl-3"
                     type="password"
                     name="password"
                     id=""
@@ -166,7 +166,7 @@ const handleReset = () => {
               )}
             </div>
             <button
-                className="btn btn-primary mt-5 w-[450px] bg-[#36d7b7] text-black"
+                className="btn btn-primary mt-5 w-full md:w-[450px] bg-[#36d7b7] text-black"
               >
                 Continue
               </button>

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Container from "../../../components/Container";
+import SectionTitle from "../../../hooks/SectionTitle";
 
 const Gallery = () => {
   const [hoveredImage, setHoveredImage] = useState(null);
@@ -68,9 +69,9 @@ const Gallery = () => {
 
   return (
     <Container>
-    <div>
-      <h1 className="text-center text-3xl font-bold mt-14 mb-6 uppercase">Gallery</h1>
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 mb-10 w-[640px] md:w-[768px] lg:w-[1024px] mx-20 md:mx-auto lg:mx-auto">
+    <div className="pt-14">
+    <SectionTitle heading={"Gallery"}></SectionTitle>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mb-10 w-full lg:w-[1200px] mx-auto">
         {images.map((image, index) => (
           <div
             key={index}
@@ -79,12 +80,12 @@ const Gallery = () => {
             onMouseLeave={handleImageLeave}
           >
             <img
-              className="w-[500px] lg:w-full hover:opacity-90 transition-opacity duration-300"
+              className="w-full lg:w-[600px] hover:opacity-90 transition-opacity duration-300"
               src={image.src}
               alt={image.alt}
             />
             {hoveredImage === image.caption && (
-              <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-40 text-white text-sm font-bold max-w-[100%] max-h-[100%] overflow-hidden w-[500px] md:w-full lg:w-full ">
+              <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-40 text-white text-sm font-bold max-w-[100%] max-h-[100%] overflow-hidden w-full ">
                 {image.caption}
               </div>
             )}

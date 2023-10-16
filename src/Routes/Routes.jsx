@@ -8,6 +8,8 @@ import CollegeDetails from "../pages/Home/CollegeDetails/CollegeDetails";
 import Colleges from "../pages/Colleges/Colleges";
 import AboutCollege from "../pages/AboutCollege/AboutCollege";
 import Admission from "../pages/Admission/Admission";
+import CollegeInfo from "../pages/ColllegeInfo/CollegeInfo";
+import MyCollege from "../pages/MyCollege/MyCollege";
 
 export const router = createBrowserRouter([
   {
@@ -35,15 +37,19 @@ export const router = createBrowserRouter([
         loader:({params})=>fetch(`https://school-booking-facilities-server.vercel.app/allBookings/${params.id}`)
       },
       {
+        path:"/admission",
+        element:<Admission/>
+      },
+      {
         path:"/admission/:id",
-        element:<AboutCollege/>,
+        element:<CollegeInfo/>,
         loader:({params})=>fetch(`https://school-booking-facilities-server.vercel.app/allBookings/${params.id}`)
       },
       {
-        path:"/admission",
-        element:<Admission/>,
+        path:"/myCollege/:id",
+        element:<MyCollege/>,
         loader:({params})=>fetch(`https://school-booking-facilities-server.vercel.app/allBookings/${params.id}`)
-      },
+      }
     ],
   },
   {

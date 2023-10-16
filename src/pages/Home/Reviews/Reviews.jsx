@@ -3,16 +3,15 @@ import Container from "../../../components/Container";
 import { Rating } from "@smastrom/react-rating";
 
 import "@smastrom/react-rating/style.css";
+import SectionTitle from "../../../hooks/SectionTitle";
 
 const Reviews = () => {
   return (
     <Container>
-      <div className="w-[640px] md:w-[768px] lg:w-[1024px] mx-auto mb-6 mt-14">
-        <h1 className="text-3xl font-bold text-center mt-6 mb-8 uppercase">
-          Parent and Student Reviews
-        </h1>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-3">
-          <div className="card w-[500px] md:w-96 lg:w-[500px] bg-gray-200 mx-auto ">
+      <div className="pt-20">
+      <SectionTitle heading={"Parent and Student Reviews"}></SectionTitle>
+        <div className="grid grid-cols-1 md:grid-cols-2 w-full xl:w-[1200px] gap-10 mx-auto mt-6 mb-5">
+          <div className="card w-full md:w-full  bg-gray-200 mx-auto ">
             <div className="card-body items-center text-center">
               <img
                 className="h-24 w-24 rounded-full hover:scale-110 transition-transform duration-300"
@@ -28,7 +27,7 @@ const Reviews = () => {
                 />
               </p>
               <div className="card-actions justify-end">
-                <p className="w-[300px] lg:w-[480px] mx-40  text-[#757575] font-semibold ml-36 lg:ml-40">
+                <p className="w-full md:w-[300px] lg:w-[480px] mx-40  text-[#757575] font-semibold ml-36 lg:ml-40">
                   <span className="font-bold text-5xl text-[#36d7b7]">“</span>As a proud father of a student studying at Williams College, I couldn't be more impressed with the institution's commitment to academic excellence and nurturing a supportive community. The faculty's dedication to student success and the diverse range of extracurricular opportunities have enriched my child's college experience. I am confident that Williams College is providing my child with an exceptional education and a foundation for a promising future.
                   <br></br>
                   <span className="ml-96 mt-10">
@@ -40,7 +39,7 @@ const Reviews = () => {
               </div>
             </div>
           </div>
-          <div className="card  w-[500px] md:w-96 lg:w-[500px] bg-gray-200 mx-auto ">
+          <div className="card w-full md:w-full  bg-gray-200 mx-auto  ">
             <div className="card-body items-center text-center">
               <img
                 className="h-24 w-24 rounded-full hover:scale-110 transition-transform duration-300"
@@ -56,7 +55,7 @@ const Reviews = () => {
                 />
               </p>
               <div className="card-actions justify-end">
-                <p className="w-[300px] lg:w-[480px] mx-40  text-[#757575] font-semibold ml-36 lg:ml-40">
+                <p className="w-full md:w-[300px] lg:w-[480px] mx-40   text-[#757575] font-semibold ml-36 lg:ml-40">
                   <span className="font-bold text-5xl text-[#36d7b7]">“</span>As a delighted father of a student enrolled at Amherst College, I am thoroughly impressed with the institution's rigorous academic programs and the personalized attention given to each student. The vibrant campus community fosters a conducive learning environment, and my child has flourished both intellectually and personally. Amherst College has truly exceeded our expectations, and I am grateful for the exceptional education it offers to my child.<br></br>
                   <span className="ml-96 mt-10">
                     {" "}
@@ -67,7 +66,7 @@ const Reviews = () => {
               </div>
             </div>
           </div>
-          <div className="card w-[500px] md:w-96 lg:w-[500px] bg-gray-200 mx-auto ">
+          <div className="card w-full md:w-full bg-gray-200 mx-auto ">
             <div className="card-body items-center text-center">
               <img
                 className="h-24 w-24 rounded-full hover:scale-110 transition-transform duration-300"
@@ -83,7 +82,7 @@ const Reviews = () => {
                 />
               </p>
               <div className="card-actions justify-end">
-                <p className="w-[300px] lg:w-[480px] mx-40  text-[#757575] font-semibold ml-36 lg:ml-40">
+                <p className="w-full md:w-[300px] lg:w-[480px] mx-40   text-[#757575] font-semibold ml-36 lg:ml-40">
                   <span className="font-bold text-5xl text-[#36d7b7]">“</span>As a proud father of a student studying at Swarthmore College, I am amazed by the depth of intellectual engagement and the strong sense of community on campus. The dedicated faculty and diverse student body create a stimulating learning environment, nurturing critical thinking and personal growth. Swarthmore College has provided my child with a transformative educational experience, and I couldn't be more satisfied with the choice.<br></br>
                   <span className="ml-96 mt-10">
                     {" "}
@@ -94,7 +93,7 @@ const Reviews = () => {
               </div>
             </div>
           </div>
-          <div className="card w-[500px] md:w-96 lg:w-[500px] bg-gray-200 mx-auto ">
+          <div className="card  w-full md:w-full bg-gray-200 mx-auto ">
             <div className="card-body items-center text-center">
               <img
                 className="h-24 w-24 rounded-full hover:scale-110 transition-transform duration-300"
@@ -110,7 +109,7 @@ const Reviews = () => {
                 />
               </p>
               <div className="card-actions justify-end">
-                <p className="w-[300px] lg:w-[480px] mx-40  text-[#757575] font-semibold ml-36 lg:ml-40">
+                <p className="w-full md:w-[300px] lg:w-[480px] mx-40  text-[#757575] font-semibold ml-36 lg:ml-40">
                   <span className="font-bold text-5xl text-[#36d7b7]">“</span>
                   As a student at Pomona College, I am truly grateful for the exceptional academic opportunities and supportive learning environment. The passionate professors and small class sizes allow for meaningful interactions and foster a love for learning. The campus community is vibrant and inclusive, offering numerous extracurricular activities and opportunities for personal growth. Pomona College has exceeded my expectations, and I am proud to be a part of this enriching educational journey<br></br>
                   <span className="ml-96 mt-10">
@@ -122,7 +121,7 @@ const Reviews = () => {
               </div>
             </div>
           </div>
-          <div className="card w-[500px] md:w-96 lg:w-[500px] bg-gray-200 mx-auto ">
+          <div className="card w-full md:w-full bg-gray-200 mx-auto ">
             <div className="card-body items-center text-center">
               <img
                 className="h-24 w-24 rounded-full hover:scale-110 transition-transform duration-300"
@@ -138,7 +137,7 @@ const Reviews = () => {
                 />
               </p>
               <div className="card-actions justify-end">
-                <p className="w-[300px] lg:w-[480px] mx-40  text-[#757575] font-semibold ml-36 lg:ml-40">
+                <p className="w-full md:w-[300px] lg:w-[480px] mx-40  text-[#757575] font-semibold ml-36 lg:ml-40">
                   <span className="font-bold text-5xl text-[#36d7b7]">“</span>As an aspiring student, I am thrilled to be studying at Haverford College. The academic rigor and intellectual stimulation are unparalleled, and the distinguished faculty inspire and challenge me to excel. The diverse and vibrant campus community fosters a sense of belonging, and the multitude of resources and opportunities available have enriched my college experience. Harvard College has exceeded my expectations, and I feel privileged to be part of this prestigious institution, preparing me for a promising future.<br></br>
                   <span className="ml-96 mt-10">
                     {" "}
@@ -149,7 +148,7 @@ const Reviews = () => {
               </div>
             </div>
           </div>
-          <div className="card w-[500px] md:w-96 lg:w-[500px] bg-gray-200 mx-auto ">
+          <div className="card  w-full md:w-full bg-gray-200 mx-auto ">
             <div className="card-body items-center text-center">
               <img
                 className="h-24 w-24 rounded-full hover:scale-110 transition-transform duration-300"
@@ -165,7 +164,7 @@ const Reviews = () => {
                 />
               </p>
               <div className="card-actions justify-end">
-                <p className="w-[300px] lg:w-[480px] mx-40  text-[#757575] font-semibold ml-36 lg:ml-40">
+                <p className="w-full md:w-[300px] lg:w-[480px] mx-40  text-[#757575] font-semibold ml-36 lg:ml-40">
                   <span className="font-bold text-5xl text-[#36d7b7]">“</span>As a student at Colby College, I am incredibly grateful for the enriching and supportive environment it provides. The faculty's dedication to teaching and mentorship has empowered me to explore my academic interests and achieve personal growth. The tight-knit community fosters meaningful connections and a sense of belonging. Additionally, the vast array of extracurricular activities and opportunities have allowed me to develop well-rounded skills and experiences. Colby College has truly been a transformative experience, and I am proud to call it my academic home.<br></br>
                   <span className="ml-96 mt-10">
                     {" "}

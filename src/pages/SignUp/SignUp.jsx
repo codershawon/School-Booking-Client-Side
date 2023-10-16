@@ -1,6 +1,5 @@
 import React, { useContext, useRef, useState } from "react";
 import Container from "../../components/Container";
-import { Helmet } from "react-helmet-async";
 import { FcGoogle } from 'react-icons/fc'
 import { Link, useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
@@ -8,6 +7,8 @@ import { AuthContext } from "../../Providers/AuthProviders";
 import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
 import useAuth from "../../hooks/useAuth";
+import signUpLottie from "./SignUp.json"
+import Lottie from "lottie-react";
 const SignUp = () => {
   const { createUser, updateUserProfile,signInWithGoogle} = useAuth();
 
@@ -29,7 +30,7 @@ const SignUp = () => {
         console.log(user);
         updateUserProfile(data.name, data.photoURL).then(()=>{
           const saveUser={name:data.name,email:data.email}
-          fetch("http://localhost:5000/user",{
+          fetch("https://school-booking-facilities-server.vercel.app/user",{
               method:"POST",
               headers:{
                 "Content-Type":"application/json"
@@ -93,24 +94,22 @@ const SignUp = () => {
   return (
     <Container>
       <div className="min-h-screen">
-        {/* <Helmet> */}
-          <title>School Booking || Login</title>
-        {/* </Helmet> */}
-        <div className="flex flex-col lg:flex-row md:px-8 items-center justify-center gap-6 mt-20">
-          <img className="w-auto h-auto"
-            src="https://i.ibb.co/K7x0dXp/Sandy-Tech-11-Single-07-removebg-preview.png"
-            alt=""
-          />
+        {/* <Helmet>
+          <title>School Booking || SignUP</title>
+        </Helmet> */}
+        <div className="flex flex-col lg:flex-row md:px-8 items-center justify-center gap-6 mt-20 pr:0 xl:pr-52">
+        <Lottie className="w-full lg:h-[600px] mx-auto" animationData={signUpLottie} />
           <div
             style={{
               border: "2px solid gray",
               borderRadius: "10px",
               padding: "20px",
             }}
+            className="w-full md:w-[500px] mx-auto"
           >
             <form onSubmit={handleSubmit(onSubmit)}>
               <h1
-                className="text-center text-3xl font-bold mb-4"
+                className="text-center text-3xl font-bold mb-4 "
               >
                 SignUP
               </h1>
@@ -118,7 +117,7 @@ const SignUp = () => {
               <div className="font-bold mt-5">
               <h5>Name</h5>
               <input
-                className="w-[450px] h-[50px] bg-[#F3F3F3] rounded-lg pl-3"
+                className="w-full lg:w-[450px] h-[50px] bg-[#F3F3F3] rounded-lg pl-3"
                 type="text"
                 name="name"
                 id=""
@@ -134,7 +133,7 @@ const SignUp = () => {
             <div className="font-bold mt-5">
               <h5>Email</h5>
               <input
-                className="w-[450px] h-[50px] bg-[#F3F3F3] rounded-lg pl-3"
+                className="w-full lg:w-[450px] h-[50px] bg-[#F3F3F3] rounded-lg pl-3"
                 type="email"
                 name="email"
                 id=""
@@ -150,7 +149,7 @@ const SignUp = () => {
             <div className="font-bold mt-5">
               <h5>Password</h5>
               <input
-                className="w-[450px] h-[50px] bg-[#F3F3F3] rounded-lg pl-3"
+                className="w-full lg:w-[450px] h-[50px] bg-[#F3F3F3] rounded-lg pl-3"
                 type="password"
                 name="password"
                 id=""
@@ -189,7 +188,7 @@ const SignUp = () => {
             <div className="font-bold mt-5">
               <h5>Confirm Password</h5>
               <input
-                className="w-[450px] h-[50px] bg-[#F3F3F3] rounded-lg pl-3"
+                className="w-full lg:w-[450px] h-[50px] bg-[#F3F3F3] rounded-lg pl-3"
                 type="password"
                 name="confirmPassword"
                 placeholder="Confirm Password"
@@ -208,7 +207,7 @@ const SignUp = () => {
               </div>
             </div>
               <button
-                className="btn btn-primary mt-5 w-[450px] bg-[#36d7b7] text-black"
+                className="btn btn-primary mt-5 w-full lg:w-[450px] bg-[#36d7b7] text-black"
               >
                 Continue
               </button>

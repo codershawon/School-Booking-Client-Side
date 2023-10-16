@@ -4,6 +4,7 @@ import Container from "../../components/Container";
 
 const AboutCollege = () => {
   const aboutCollege = useLoaderData();
+  console.log(aboutCollege)
   const{collegeName, admissionProcess, eventDetails, researchHistory, sportsCategory,eventFacilities,sportsFacilities}=aboutCollege
   return (
     <Container>

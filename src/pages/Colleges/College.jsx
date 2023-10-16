@@ -14,25 +14,25 @@ const College = ({ item }) => {
     admissionDates,
   } = item;
   return (
-    <div className="card w-[500px] md:w-[380px] lg:w-[500px] bg-gray-300 shadow-xl mx-auto">
+    <div className="card w-full md:w-[380px] lg:w-[500px] bg-gray-300 shadow-xl mx-auto">
       <figure className="px-10 pt-10">
         <img
           src={collegeImage}
           alt="college"
-          className="rounded-xl h-[350px]"
+          className="rounded-xl w-full h-[350px]"
         />
       </figure>
-      <div className="card-body text-left w-[500px] md:w-[450px] lg:w-[500px]">
+      <div className="card-body text-left w-full md:w-[450px] lg:w-[500px]">
         <h2 className="card-title">
           <span className="border-s-4 border-[#36d7b7] rounded">
-            <span className="ml-2 font-bold uppercase">College Name: </span>
+            <span className="ml-2 font-bold uppercase text-base ">College Name: </span>
           </span>
-          <span className="text-[#757575] font-semibold">{collegeName}</span>
+          <span className="text-[#757575] font-semibold text-base ">{collegeName}</span>
         </h2>
         <div className="flex items-center">
           <h2>
             <span className="border-s-4 border-[#36d7b7] rounded mb-3">
-              <span className="ml-2 mt-2 font-bold uppercase">
+              <span className="ml-2 mt-2 font-bold uppercase text-base ">
                 College Rating:{" "}
               </span>
             </span>
@@ -48,19 +48,19 @@ const College = ({ item }) => {
         </div>
         <h2>
           <span className="border-s-4 border-[#36d7b7] rounded mb-3">
-            <span className="ml-2 font-bold uppercase">
+            <span className="ml-2 font-bold uppercase text-base ">
               Number Of Researches:{" "}
             </span>
           </span>
-          <span className="text-[#757575] font-semibold">
+          <span className="text-[#757575] font-semibold text-base ">
             {numberOfResearches}
           </span>
         </h2>
         <h2>
           <span className="border-s-4 border-[#36d7b7] rounded mb-3">
-            <span className="ml-2 font-bold uppercase">Admission Dates: </span>
+            <span className="ml-2 font-bold uppercase text-base ">Admission Dates: </span>
           </span>
-          <span className="text-[#757575] font-semibold">{admissionDates}</span>
+          <span className="text-[#757575] font-semibold text-base ">{admissionDates}</span>
         </h2>
         <div className="card-actions justify-end md:justify-start lg:justify-end ">
           <Link to={`/colleges/${_id}`}>

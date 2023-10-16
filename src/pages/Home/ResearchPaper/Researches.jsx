@@ -9,7 +9,7 @@ const Researches = ({ item: { id, image, subject, title, author, description,lin
 
   return (
     <div>
-      <div className="card card-compact w-[500px] md:w-96 lg:w-[500px] bg-gray-300 shadow-xl mx-auto">
+      <div className="card card-compact w-full mx-auto bg-gray-300 shadow-xl">
         <figure>
           <img className="h-[350px] w-full" src={image} alt="artificial" />
         </figure>

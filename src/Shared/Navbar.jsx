@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Container from "../components/Container";
 import { Link } from "react-router-dom";
 import useAuth from "../hooks/useAuth";
@@ -7,11 +7,20 @@ import { AiOutlineMenu } from 'react-icons/ai';
 const Navbar = () => {
   const {user,logout}=useAuth()
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [collegeInfo,setCollegeInfo]=useState([])
+  useEffect(() => {
+    fetch(`https://school-booking-facilities-server.vercel.app/allBookings`)
+      .then((res) => res.json())
+      .then((data) => {
+        setCollegeInfo(data);
+      });
+  }, []);
+ 
   return (
     <div className="fixed w-full bg-white z-10 shadow-sm">
       <div className="py-2 border-b-[1px]">
         <Container>
-            <div className="navbar text-[#c4cfde]">
+            <div className="navbar text-[#c4cfde] w-full mx-auto">
           <div className="navbar-start">
             <div className="dropdown">
               <label tabIndex={0} className="btn lg:hidden sm:mr-4">
@@ -44,12 +53,12 @@ const Navbar = () => {
                 <Link to="/admission">Admission</Link>
                 </li>
                 <li>
-                <Link to="/myCollege">My College</Link>
+                {user && <Link to="/">My College</Link>}
                 </li>
               </ul>
             </div>
             <Link to="/">
-            <img className="ml-4" width="60" height="60" src="https://i.ibb.co/j6QyKfg/logo.png" alt="" />
+            <img className="ml-4" width="100" height="100" src="https://i.ibb.co/SczM1zW/Screenshot-2023-10-16-121650-removebg-preview.png" alt="" />
             </Link>
           </div>
           <div className="navbar-center hidden lg:flex">
@@ -64,7 +73,7 @@ const Navbar = () => {
               <Link to="/admission">Admission</Link>
               </li>
               <li>
-              <Link to="/myCollege">My College</Link>
+            {user &&   <Link to="/">My College</Link>}
               </li>
             </ul>
           </div>
