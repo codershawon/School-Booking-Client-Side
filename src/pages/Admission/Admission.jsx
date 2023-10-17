@@ -15,18 +15,18 @@ const Admission = () => {
   console.log(admissionInfo)
   return (
     <Container>
-      <div className="pt-40 mb-[480px] w-[500px] mx-auto">
+      <div className="pt-40 mb-[480px] w-full lg:w-[500px] mx-auto">
       <SectionTitle heading={"College Admission Form"}></SectionTitle>
-        <div className="w-[370px]  mx-auto">
+        <div className="w-full lg:w-[370px]  mx-auto">
             <input
               id="category"
-              className="bg-gray-300 w-[350px] h-[50px] rounded-lg pl-3"
+              className="bg-gray-300 w-full md:w-[350px] lg:w-[370px] mx-auto h-[50px] rounded-lg pl-3"
               type="text"
               name="category"
               placeholder="Williams College"
               required
             />
-        <div className="dropdown dropdown-hover relative right-5">
+        <div className="dropdown dropdown-hover relative -top-8 lg:left-80">
           <RiArrowDropDownLine />
           <ul
             tabIndex={0}
